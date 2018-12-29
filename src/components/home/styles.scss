@@ -1,0 +1,34 @@
+.home__cards {
+  margin-top: 77px;
+}
+
+.home__card {
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  text-align: center;
+  color: $color-white;
+  padding: 59px 30px 86px;
+  text-transform: uppercase;
+  transition: 377ms ease-in-out;
+  background-color: $color-grey_23;
+  transition-property: box-shadow, transform;
+
+  &:hover {
+    box-shadow: $main-shadow;
+    transform: translateY(-3px);
+  }
+}
+
+.home__card-title {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.home__card-description {
+  display: block;
+  font-size: 14px;
+  margin-top: 13px;
+}
