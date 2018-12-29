@@ -8,7 +8,7 @@ import Dotenv from 'dotenv-webpack';
 const devMode = process.env.NODE_ENV === 'development';
 
 export default {
-  devtool: devMode ? 'cheap-module-eval-source-map' : null,
+  devtool: devMode ? 'cheap-module-eval-source-map' : false,
   entry: './src/app.js',
   output: {
     path: resolve(__dirname, 'dist'),

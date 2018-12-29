@@ -6,7 +6,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
     "prebuild": "rm -rf ./dist",
-    "build": "cross-env NODE_ENV=production webpack"
+    "postbuild": "cp -r ./public/* ./dist",
+    "build": "cross-env NODE_ENV=production webpack -p"
   },
   "repository": {
     "type": "git",
