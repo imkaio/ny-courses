@@ -1,0 +1,39 @@
+.menu {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.menu__items {
+  display: flex;
+  font-size: 18px;
+  margin-left: 24px;
+  text-transform: uppercase;
+  justify-content: space-between;
+}
+
+.menu__item {
+  margin-right: 18px;
+  color: $color-white;
+}
+
+.menu__modal-button {
+  cursor: pointer;
+  border: 0;
+  font-size: 18px;
+  margin-left: 8px;
+  color: $color-grey_23;
+  padding: 16px 31px 18px;
+  text-transform: uppercase;
+  background-color: $color_white;
+}
+
+.menu__search {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: block;
+  flex-shrink: 0;
+  margin-left: 52px;
+  fill: $color_white;
+}

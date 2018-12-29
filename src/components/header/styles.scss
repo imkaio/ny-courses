@@ -1,0 +1,50 @@
+.header {
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100vw;
+  position: fixed;
+  box-shadow: $main-shadow;
+  background-color: $color-white;
+}
+
+.header__info-bar {
+  display: flex;
+  padding: 15px 0 11px;
+  justify-content: space-between;
+}
+
+.header__phone {
+  font-size: 14px;
+}
+
+.header__language {
+  margin-top: -3px;
+}
+
+.header__language-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  font-size: 14px;
+  background: none;
+
+  &:first-child:after {
+    content: '|';
+    margin: 0 3px;
+  }
+}
+
+.header__main {
+  padding: 16px 0 15px;
+  background-color: $color-orange;
+}
+
+.header__title {
+  width: 94px;
+  height: 94px;
+  font-size: 0;
+  display: block;
+  background-image: url('/images/image-logo.png');
+  background-size: 100%;
+}
