@@ -1,0 +1,19 @@
+$fonts: (
+	('oswald-web', 'Oswald-Regular', 400, 'normal'),
+	('oswald-web', 'Oswald-Bold', 700, 'normal'),
+);
+
+@mixin createFonts($fonts) {
+	@each $font in $fonts {
+		@font-face {
+			font-family: #{nth($font, 1)};
+			src: url('/fonts/#{nth($font, 2)}.woff') format('woff'),
+				url('/fonts/#{nth($font, 2)}.eot') format('eot'),
+				url('/fonts/#{nth($font, 2)}.ttf') format('truetype');
+			font-weight: #{nth($font, 3)};
+			font-style: #{nth($font, 4)};
+		}
+	}
+}
+
+@include createFonts($fonts);
