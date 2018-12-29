@@ -1,6 +1,8 @@
 $fonts: (
 	('oswald-web', 'Oswald-Regular', 400, 'normal'),
 	('oswald-web', 'Oswald-Bold', 700, 'normal'),
+	('worksans-web', 'WorkSans-Regular', 400, 'normal'),
+	('worksans-web', 'WorkSans-Bold', 700, 'normal'),
 );
 
 @mixin createFonts($fonts) {
