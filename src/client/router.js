@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { isDev } from '../utils/conditions';
-import { Provider as ContentProvider } from './context';
-import Header from '../components/header';
-import Home from '../components/home';
+import { isDev } from 'app/utils/conditions';
+import { Provider as ContentProvider } from 'app/client/context';
+import Header from 'components/header';
+import Footer from 'containers/footer';
+import Home from 'components/home';
 
 class CustomRouter extends Component {
   static propTypes = {
@@ -28,6 +29,7 @@ class CustomRouter extends Component {
             <Fragment>
               <Header />
               <Route path="/" component={Home} />
+              <Footer />
             </Fragment>
           </Router>
         </Provider>

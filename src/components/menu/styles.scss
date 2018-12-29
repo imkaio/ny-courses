@@ -15,6 +15,22 @@
 .menu__item {
   margin-right: 18px;
   color: $color-white;
+  display: inline-block;
+  
+  &:after {
+    content: '';
+    width: 0;
+    top: 2px;
+    height: 2px;
+    display: block;
+    position: relative;
+    background-color: $color-white;
+    transition: width $timer2 ease-in-out;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
 }
 
 .menu__modal-button {

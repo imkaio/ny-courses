@@ -1,0 +1,38 @@
+.footer {
+  margin-top: 106px;
+  padding: 49px 0 73px;
+  text-transform: uppercase;
+  background-color: $color-orange;
+}
+
+.footer__item {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: $color-white;
+  display: inline-block;
+}
+
+.footer__item-child {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: $color-white;
+  display: inline-block;
+}
+
+.footer__item,
+.footer__item-child {
+  &:after {
+    content: '';
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 2px;
+    background-color: $color-white;
+    transition: width $timer2 ease-in-out;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+}
