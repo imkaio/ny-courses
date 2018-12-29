@@ -1,10 +1,18 @@
 import React from 'react';
-import Display from '../../containers/display';
+import Isvg from 'react-inlinesvg';
+import Display from 'containers/display';
+import FeaturedPackages from 'containers/packages/featured';
+import FeaturedBlog from 'containers/blog/featured';
 import { Link } from 'react-router-dom';
 import { Consumer } from '../../client/context';
 
 const Home = () => {
   const cards = ['PASSEIOS', 'ROTEIROS', 'ACOMODACOES'];
+  const advantages = [
+    { icon: 'cash', language: 'VANTAGEM_01' },
+    { icon: 'comfort', language: 'VANTAGEM_02' },
+    { icon: 'knowledge', language: 'VANTAGEM_03' }
+  ];
 
   return (
     <Consumer>
@@ -24,6 +32,27 @@ const Home = () => {
               ))}
             </div>
           </div>
+
+          <FeaturedPackages />
+
+          <section className="home__advantages">
+            <div className="container">
+              <h1 className="home__advantages-title">{content.VANTAGENS}</h1>
+
+              <div className="row">
+                {advantages.map((advantage, index) => (
+                  <div className={`col-xs-2 ${!index ? 'col-xs-offset-3' : ''}`} key={advantage.language}>
+                    <div className="home__advantage-icon-wrapper">
+                      <Isvg className="home__advantage-icon" src={`/images/icon-${advantage.icon}.svg`} />
+                    </div>
+                    <span className="home__advantage-title">{content[advantage.language]}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <FeaturedBlog />
         </div>
       )}
     </Consumer>
