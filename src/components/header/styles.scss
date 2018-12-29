@@ -18,21 +18,6 @@
   display: flex;
 }
 
-.header__phone {
-  display: flex;
-  font-size: 14px;
-
-  &:after {
-    content: '';
-    width: 2px;
-    height: 100%;
-    display: flex;
-    margin-left: 22px;
-    margin-right: 25px;
-    background: $color-black;
-  }
-}
-
 .header__social {
   display: flex;
   margin-top: -5px;
@@ -40,6 +25,15 @@
   align-items: center;
   transition: $timer2;
   transition-property: color, fill;
+
+  &:first-child:after {
+    content: '';
+    width: 2px;
+    height: 100%;
+    display: flex;
+    margin-left: 22px;
+    background: $color-black;
+  }
 
   &:hover {
     fill: $color-orange;
@@ -55,6 +49,7 @@
 
 .header__social-label {
   font-size: 14px;
+  white-space: pre-line;
   text-transform: uppercase;
 }
 

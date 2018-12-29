@@ -11,13 +11,14 @@ const Header = () => (
         <div className="container">
           <div className="header__info-bar">
             <div className="header__info-bar--left">
-              <div className="header__phone">
-                {content.HEADER_TELEFONE}
+              <div className="header__social">
+                <Isvg className="header__social-icon" src="/images/icon-whatsapp.svg" />
+                <span className="header__social-label">{content.HEADER_TELEFONE}</span>
               </div>
 
-              <a className="header__social" href={content.WHATSAPP_URL} rel="noopener noreferrer" target="_blank">
-                <Isvg className="header__social-icon" src="/images/icon-whatsapp.svg" />
-                <span className="header__social-label">{content.WHATSAPP}</span>
+              <a className="header__social" href={content.FACEBOOK_URL} rel="noopener noreferrer" target="_blank">
+                <Isvg className="header__social-icon" src="/images/icon-facebook.svg" />
+                <span className="header__social-label">{content.FACEBOOK}</span>
               </a>
 
               <a className="header__social" href={content.INSTAGRAM_URL} rel="noopener noreferrer" target="_blank">
