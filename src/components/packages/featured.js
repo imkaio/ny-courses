@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Consumer } from '../../client/context';
+import { Consumer } from 'app/client/context';
+import { transformToHour } from 'app/utils/functions';
 
 class FeaturedPackages extends Component {
   static propTypes = {
@@ -12,13 +13,6 @@ class FeaturedPackages extends Component {
 
   componentDidMount() {
     return !this.props.loaded && this.props.getPackages();
-  }
-
-  transformToHour(ms) {
-    const seconds = 60;
-    const minutes = 60;
-
-    return ms / seconds / minutes;
   }
 
   render() {
@@ -37,12 +31,14 @@ class FeaturedPackages extends Component {
                         <h1 className="featured-packages__item-title">{item.title}</h1>
                         <h2 className="featured-packages__item-description">{item.description}</h2>
                         <span className="featured-packages__item-time">{item.weeklyDuration} {content.SEMANAS_DE_CURSO}</span>
-                        <span className="featured-packages__item-time">{this.transformToHour(item.hourlyDuration)} {content.HORAS_SEMANAIS}</span>
+                        <span className="featured-packages__item-time">{transformToHour(item.hourlyDuration)} {content.HORAS_SEMANAIS}</span>
 
                         <button className="featured-packages__item-button">{content.ORCAMENTO}</button>
                       </div>
 
-                      <img className="featured-packages__item-image" src={item.image} alt={item.title} />
+                      {item.image && (
+                        <img className="featured-packages__item-image" src={item.image} alt={item.title} />
+                      )}
                     </Link>
                   </article>
                 ))}

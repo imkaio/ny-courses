@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 import store from 'data/store';
-import Content from './containers/content';
+import Client from 'app/client';
 import './styles/main.scss';
 
 const App = () => (
-  <Content store={store} />
+  <Client store={store} />
 );
 
 render(<App />, document.getElementById('app'));

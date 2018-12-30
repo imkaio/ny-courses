@@ -1,13 +1,15 @@
 import {
   LOADING_PACKAGES,
   SUCCESS_PACKAGES,
-  ERROR_PACKAGES
-} from '../actions/packages';
+  ERROR_PACKAGES,
+  SUCCESS_PACKAGE
+} from 'data/actions/packages';
 
 const initialState = {
   loading: false,
   loaded: false,
-  payload: []
+  payload: [],
+  package: {}
 };
 
 export default (state = initialState, action = {}) => {
@@ -24,6 +26,13 @@ export default (state = initialState, action = {}) => {
         loading: false,
         loaded: true,
         payload: action.payload
+      };
+    case SUCCESS_PACKAGE:
+      return {
+        ...state,
+        loading: false,
+        loaded: true,
+        package: action.payload
       };
     case ERROR_PACKAGES:
       return {

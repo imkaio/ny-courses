@@ -45,20 +45,35 @@ export default {
     return fetch(`${table}?${query}`)
       .then(({ data }) => data.records.map(record => ({
         id: record.id,
-        type: record.fields.Tipo,
         title: record.fields.Titulo,
         description: record.fields.Descricao,
-        destiny: record.fields.Destino,
-        image: record.fields.Imagem[0]?.url,
+        image: record.fields.Imagem && record.fields.Imagem[0]?.url,
         hourlyDuration: record.fields.DuracaoSemanal,
-        weeklyDuration: record.fields.DuracaoEmSemanas,
-        lodgingDuration: record.fields.DuracaoHospedagem,
-        lodgingPlaces: record.fields.HospedagemLocal,
-        price: record.fields.Preco,
-        language: record.fields.Idioma,
-        included: record.fields.Inclui,
-        notIncluded: record.fields.NaoInclui
+        weeklyDuration: record.fields.DuracaoEmSemanas
       })));
+  },
+  getPackage: (id) => {
+    const table = `/Pacotes/${id}`;
+
+    return fetch(table)
+      .then(({ data }) => ({
+        id: data.id,
+        type: data.fields.Tipo,
+        title: data.fields.Titulo,
+        description: data.fields.Descricao,
+        destiny: data.fields.Destino,
+        image: data.fields.Imagem && data.fields.Imagem[0]?.url,
+        hourlyDuration: data.fields.DuracaoSemanal,
+        weeklyDuration: data.fields.DuracaoEmSemanas,
+        lodgingDuration: data.fields.DuracaoHospedagem,
+        lodgingPlaces: data.fields.HospedagemLocal,
+        price: data.fields.Preco,
+        language: data.fields.Idioma,
+        included: data.fields.Inclui,
+        notIncluded: data.fields.NaoInclui,
+        related: data.fields.Relacionados,
+        text: data.fields.Texto
+      }));
   },
   getBlogPosts: () => {
     const table = '/Blog';

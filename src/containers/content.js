@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Router from 'app/client/router';
+import Routes from 'app/client/routes';
 import fetchContent from 'data/actions/content';
 
 export default connect(
@@ -7,4 +7,4 @@ export default connect(
   dispatch => ({
     getContent: () => dispatch(fetchContent())
   })
-)(Router);
+)(Routes);

@@ -1,6 +1,7 @@
 const initialState = {
   items: [
     { language: 'MENU_INICIO', path: '/' },
+    { language: 'MENU_PACOTES', path: '/pacotes' },
     { language: 'MENU_CONTATO', path: '/contato' },
     { language: 'MENU_BLOG', path: '/blog' }
   ]

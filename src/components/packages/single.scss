@@ -1,0 +1,238 @@
+.single-packages__sticky {
+  top: 190px;
+  position: sticky;
+}
+
+.single-packages__wrapper {
+  width: 100%;
+  height: 350px;
+  margin-top: 60px;
+  background-color: $color-grey_C4;
+}
+
+.single-packages__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.single-packages__info {
+  margin-top: -66px;
+  color: $color-white;
+  box-shadow: $main-shadow;
+  text-transform: uppercase;
+  padding: 109px 57px 110px 70px;
+  background-color: $color-orange;
+}
+
+.single-packages__title {
+  font-size: 36px;
+}
+
+.single-packages__description {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 10px;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    display: block;
+    margin: 29px 0 33px;
+    background-color: $color-white;
+  }
+}
+
+.single-packages__topic {
+  display: flex;
+  align-items: center;
+  margin-bottom: 23px;
+
+  &:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    margin-right: 20px;
+    background-color: $color-white;
+  }
+}
+
+.single-packages__button {
+  width: 230px;
+  height: 60px;
+  display: flex;
+  font-size: 18px;
+  background: none;
+  margin-top: 74px;
+  color: $color-white;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  border: 3px solid $color-white;
+}
+
+.single-packages__blog {
+  margin-top: 20px;
+  padding: 45px 70px;
+  color: $color-white;
+  text-transform: uppercase;
+  background-color: $color-orange_dark;
+}
+
+.single-packages__blog-title {
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+.single-packages__blog-link {
+  display: flex;
+  font-size: 14px;
+  margin-top: 25px;
+  padding: 6px 17px;
+  position: relative;
+  color: $color-white;
+  align-items: center;
+  letter-spacing: 0.097em;
+  transition: color $timer3 ease-in-out;
+
+  &:before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 3px;
+    z-index: 0;
+    height: 25px;
+    display: block;
+    position: absolute;
+    background-color: $color-white;
+    transition: width $timer3 ease-in-out;
+  }
+
+  &:hover {
+    color: $color-orange;
+  }
+  
+  &:hover:before {
+    width: 100%;
+  }
+}
+
+.single-packages__blog-label {
+  z-index: 1;
+  position: relative;
+}
+
+.single-packages__content {
+  margin-top: 61px;
+  color: $color-grey_23;
+  font-family: $secondary-font;
+}
+
+.single-packages__text {
+  line-height: 1.4em;
+  margin-bottom: 31px;
+  
+  &:first-child {
+    padding-right: 170px;
+  }
+}
+
+.single-packages__text--strong {
+  display: block;
+  margin-right: 120px;
+}
+
+.single-packages__list-title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: $color-orange;
+}
+
+.single-packages__list-item {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.single-packages__related-title {
+  font-size: 28px;
+  margin: 70px 0 57px;
+  text-transform: uppercase;
+}
+
+.single-packages__item {
+  height: 387px;
+  display: block;
+  position: relative;
+  margin-bottom: 70px;
+  box-shadow: $main-shadow;
+  transition: box-shadow $timer3;
+  background-color: $color-grey_C4;
+
+  &:hover {
+    box-shadow: $hover-shadow;
+  }
+}
+
+.single-packages__item-info {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 230px;
+  margin-top: -25px;
+  position: absolute;
+  color: $color-white;
+  padding: 50px 30px 30px;
+  background-color: $color-orange;
+  transition: background-color $timer3;
+
+  .single-packages__item:hover & {
+    background-color: darken($color-orange, 5);
+  }
+}
+
+.single-packages__item-title {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.single-packages__item-description {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 12px;
+  text-transform: uppercase;
+
+  &:after {
+    content: '';
+    width: 90%;
+    height: 2px;
+    display: block;
+    margin: 23px 0;
+    background-color: $color-black;
+  }
+}
+
+.single-packages__item-time {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.single-packages__item-button {
+  cursor: pointer;
+  border: 0;
+  font-size: 18px;
+  margin-top: 42px;
+  padding: 14px 39.5px;
+  text-transform: uppercase;
+  background-color: $color-white;
+}
+
+.single-packages__item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
