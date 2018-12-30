@@ -97,5 +97,16 @@ export default {
         category: record.fields.Categoria,
         description: record.fields.Descricao
       })));
+  },
+  postModal: (data) => {
+    const body = new FormData();
+    Object.entries(data).forEach(([key, value]) => body.append(key, value));
+
+    return axios({
+      data: body,
+      method: 'POST',
+      url: `${process.env.SITE_URL}/functions/form.php`,
+      config: { headers: { 'Content-Type': 'multipart/form-data' } }
+    });
   }
 };

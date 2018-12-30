@@ -1,4 +1,7 @@
 <?php
+  // Setting up CORS
+  header("Access-Control-Allow-Origin: *");
+
   // Form variables
   $full_name = $_POST['name'];
   $phone = $_POST['phone'];
@@ -39,7 +42,7 @@
   ";
 
   // Basic Config
-  $destination = "thismarcoantonio@gmail.com";
+  $destination = "adriano@minhanovayork.com.br";
   $title = "Novo Orçamento: $full_name";
   $headers = "MIME-Version: 1.0" . "\r\n";
   $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n";
@@ -54,12 +57,16 @@
       $response->status = 200;
       echo json_encode($response);
     } else {
+      header('HTTP/1.1 500 Internal Server Error');
+
       $response->status = 500;
       $response->full_name = $full_name;
       $response->email = $full_name;
       echo json_encode($response);
     }
   } else {
+    header('HTTP/1.1 500 Internal Server Error');
+    
     $response->status = 500;
     $response->full_name = $full_name;
     $response->email = $full_name;

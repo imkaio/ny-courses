@@ -1,0 +1,45 @@
+.form-field {
+  width: 100%;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.form-field__label {
+  top: 26px;
+  left: 21px;
+  font-size: 18px;
+  position: absolute;
+  pointer-events: none;
+  text-transform: uppercase;
+  transition: $timer2 ease-in-out;
+  transition-property: left, opacity;
+}
+
+.form-field__label--hide {
+  opacity: 0;
+  left: 30px;
+}
+
+.form-field__item {
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  color: $color-grey_23;
+  font-family: $main-font;
+  padding: 20px 19px 19.3px;
+  border: 2px solid $color-black;
+
+  &:focus {
+    border: 2px solid $color-orange;
+  }
+}
+
+.form-field--textarea {
+  resize: none;
+  height: 189px;
+}
+
+.form-field__option {
+  font-size: 18px;
+  font-family: $main-font;
+}

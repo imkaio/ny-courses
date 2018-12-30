@@ -43,7 +43,7 @@ const Header = () => (
                 </h1>
               </div>
 
-              <div className="col-xs-4 col-xs-offset-5">
+              <div className="col-xs-6 col-xs-offset-4">
                 <Menu />
               </div>
             </div>

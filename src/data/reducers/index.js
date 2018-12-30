@@ -6,6 +6,7 @@ import display from './display';
 import packages from './packages';
 import blog from './blog';
 import footer from './footer';
+import modal from './modal';
 
 export default combineReducers({
   content,
@@ -13,5 +14,6 @@ export default combineReducers({
   display,
   packages,
   blog,
-  footer
+  footer,
+  modal
 });
