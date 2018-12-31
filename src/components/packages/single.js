@@ -16,7 +16,8 @@ class SinglePackages extends Component {
     payload: PropTypes.array,
     length: PropTypes.number,
     params: PropTypes.object,
-    id: PropTypes.string
+    id: PropTypes.string,
+    openModal: PropTypes.func
   }
 
   componentDidMount() {
@@ -32,6 +33,11 @@ class SinglePackages extends Component {
     if (payloadLoaded || (prevProps.package.id && routeChanged)) {
       this.props.getSinglePackage(this.props.match.params.id);
     }
+  }
+
+  handleModal = id => (e) => {
+    e.preventDefault();
+    this.props.openModal(id);
   }
 
   render() {
@@ -69,7 +75,7 @@ class SinglePackages extends Component {
                       {item.lodgingDuration && (
                         <span className="single-packages__topic">{item.lodgingDuration} {content.SEMANAS_DE_HOSPEDAGEM}</span>
                       )}
-                      <button className="single-packages__button">{content.ORCAMENTO_RAPIDO}</button>
+                      <button className="single-packages__button" onClick={this.handleModal(item.id)}>{content.ORCAMENTO_RAPIDO}</button>
                     </div>
 
                     <div className="single-packages__blog">
@@ -135,7 +141,7 @@ class SinglePackages extends Component {
                                   <span className="single-packages__item-time">{related.weeklyDuration} {content.SEMANAS_DE_CURSO}</span>
                                   <span className="single-packages__item-time">{transformToHour(related.hourlyDuration)} {content.HORAS_SEMANAIS}</span>
 
-                                  <button className="single-packages__item-button">{content.ORCAMENTO}</button>
+                                  <button className="single-packages__item-button" onClick={this.handleModal(related.id)}>{content.ORCAMENTO}</button>
                                 </div>
 
                                 {related.image && (

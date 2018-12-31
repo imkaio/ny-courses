@@ -2,8 +2,9 @@ import ApiClient from 'data/services/api';
 
 export const TOGGLE_MODAL = 'modal/TOGGLE_MODAL';
 
-export const toggleModal = () => ({
-  type: TOGGLE_MODAL
+export const toggleModal = id => ({
+  type: TOGGLE_MODAL,
+  id
 });
 
 export const LOADING_MODAL = 'modal/LOADING_MODAL';

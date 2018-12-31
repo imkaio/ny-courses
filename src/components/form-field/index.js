@@ -11,19 +11,22 @@ const FormField = ({
   className,
   onChange,
   required,
-  value
+  value,
+  selected
 }) => (
   <fieldset className={className ? `${className} form-field` : 'form-field'}>
     {select && !textarea && (
       <select
         id={name}
         name={name}
-        value={value}
+        value={selected}
+        defaultValue=""
         onChange={onChange}
         required={required}
         className="form-field__item form-field--select"
       >
-        {options.map(option => <option className="form-field__option" key={option} value={option}>{option}</option>)}
+        <option value="" disabled>SELECIONE UM CURSO</option>
+        {options.map(option => <option className="form-field__option" key={option.value} value={option.value}>{option.text}</option>)}
       </select>
     )}
 
@@ -69,7 +72,8 @@ FormField.propTypes = {
   className: PropTypes.string,
   onChange: PropTypes.func,
   required: PropTypes.bool,
-  value: PropTypes.string
+  value: PropTypes.string,
+  selected: PropTypes.string
 };
 
 export default FormField;

@@ -17,7 +17,8 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         loading: true,
-        loaded: false
+        loaded: false,
+        id: undefined
       };
     case SUCCESS_MODAL:
       return {
@@ -36,6 +37,7 @@ export default (state = initialState, action = {}) => {
     case TOGGLE_MODAL:
       return {
         ...state,
+        id: action.id,
         success: false,
         isOpen: !state.isOpen
       };
