@@ -7,6 +7,8 @@ import Header from 'components/header';
 import Footer from 'containers/footer';
 import Home from 'components/home';
 import SinglePackages from 'containers/packages/single';
+import Blog from 'containers/blog';
+import SingleBlog from 'containers/blog/single';
 
 class Routes extends Component {
   static propTypes = {
@@ -35,6 +37,8 @@ class Routes extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/pacotes" component={() => (<h1>Cursos</h1>)} />
           <Route path="/pacotes/:id" component={SinglePackages} />
+          <Route exact path="/blog" component={Blog} />
+          <Route path="/blog/:id" component={SingleBlog} />
         </Switch>
 
         <Footer />

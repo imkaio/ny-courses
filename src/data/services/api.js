@@ -81,7 +81,7 @@ export default {
       'sort[0][field]': 'DataPublicacao',
       'sort[0][direction]': 'asc',
       filterByFormula: 'Ativo',
-      fields: ['ID', 'Destaque', 'Titulo', 'Texto', 'Imagens', 'Autor', 'Publicador', 'DataPublicacao', 'Categoria', 'Descricao']
+      fields: ['ID', 'Destaque', 'Titulo', 'Texto', 'Imagens', 'Autor', 'Publicador', 'DataPublicacao', 'Categorias', 'Descricao']
     });
 
     return fetch(`${table}?${query}`)
@@ -97,6 +97,23 @@ export default {
         category: record.fields.Categoria,
         description: record.fields.Descricao
       })));
+  },
+  getPost: (id) => {
+    const table = `/Blog/${id}`;
+
+    return fetch(table)
+      .then(({ data }) => ({
+        id: data.id,
+        title: data.fields.Titulo,
+        description: data.fields.Descricao,
+        text: data.fields.Texto,
+        images: data.fields.Imagens.map(image => image.url),
+        author: data.fields.Autor,
+        publisher: data.fields.Publicador,
+        date: data.fields.DataPublicacao,
+        categories: data.fields.Categorias,
+        related: data.fields.Relacionados
+      }));
   },
   postModal: (data) => {
     const body = new FormData();

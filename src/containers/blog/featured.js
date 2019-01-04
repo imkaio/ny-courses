@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import FeaturedBlog from '../../components/blog/featured';
-import fetchBlogPosts from '../../data/actions/blog';
+import FeaturedBlog from 'components/blog/featured';
+import fetchBlogPosts from 'data/actions/blog';
 
 export default connect(
   ({ blog }) => ({

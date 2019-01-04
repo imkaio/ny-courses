@@ -1,12 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Isvg from 'react-inlinesvg';
-import { Consumer } from '../../client/context';
+import { Consumer } from 'app/client/context';
 
 class Display extends Component {
   static propTypes = {
     getItems: PropTypes.func,
     payload: PropTypes.array
+  }
+
+  state = {
+    active: 0
   }
 
   componentDidMount() {
@@ -27,10 +31,6 @@ class Display extends Component {
         ? this.props.payload.length - 1
         : state.active - 1
     }));
-  }
-
-  state = {
-    active: 0
   }
 
   render() {

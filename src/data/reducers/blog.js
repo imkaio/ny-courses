@@ -1,13 +1,15 @@
 import {
   LOADING_BLOG_POSTS,
   SUCCESS_BLOG_POSTS,
-  ERROR_BLOG_POSTS
-} from '../actions/blog';
+  ERROR_BLOG_POSTS,
+  SUCCESS_POST
+} from 'data/actions/blog';
 
 const initialState = {
   loading: false,
   loaded: false,
-  posts: []
+  posts: [],
+  post: {}
 };
 
 export default (state = initialState, action = {}) => {
@@ -31,6 +33,11 @@ export default (state = initialState, action = {}) => {
         loading: false,
         loaded: true,
         error: action.error
+      };
+    case SUCCESS_POST:
+      return {
+        ...state,
+        post: action.payload
       };
     default:
       return state;

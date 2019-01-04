@@ -2,7 +2,7 @@ import {
   LOADING_CONTENT,
   SUCCESS_CONTENT,
   ERROR_CONTENT
-} from '../actions/content';
+} from 'data/actions/content';
 
 const initialState = {
   loading: false,

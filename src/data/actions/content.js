@@ -1,4 +1,4 @@
-import ApiClient from '../services/api';
+import ApiClient from 'data/services/api';
 
 export const LOADING_CONTENT = 'content/LOADING_CONTENT';
 export const SUCCESS_CONTENT = 'content/SUCCESS_CONTENT';

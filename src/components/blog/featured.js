@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Consumer } from '../../client/context';
+import { Consumer } from 'app/client/context';
 
 class FeaturedBlog extends Component {
   static propTypes = {
@@ -34,7 +34,7 @@ class FeaturedBlog extends Component {
                       </div>
                       <div className="blog-featured__item-info">
                         <h1 className="blog-featured__item-title">{post.title}</h1>
-                        <p className="blog-featured__item-description">{post.description}</p>
+                        <p className="blog-featured__item-description">{post.description.slice(0, 95)}...</p>
                       </div>
                     </Link>
                   </article>

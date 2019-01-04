@@ -1,16 +1,17 @@
-$color_black: #000000;
+$color-black: #000000;
 $color-white: #FFFFFF;
 $color-orange: #FD6A01;
 $color-orange_dark: #EC5000;
 $color-grey_23: #232323;
 $color-grey_E5: #E5E5E5;
 $color-grey_C4: #C4C4C4;
+$color-grey_91: #919191;
 
 $main-font: 'oswald-web';
 $secondary-font: 'worksans-web';
 
-$main-shadow: 2px 2px 6px rgba($color_black, .16);
-$hover-shadow: 4px 4px 8px rgba($color_black, .16);
+$main-shadow: 2px 2px 6px rgba($color-black, .16);
+$hover-shadow: 4px 4px 8px rgba($color-black, .16);
 
 $timer0: 89ms;
 $timer1: 144ms;

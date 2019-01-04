@@ -1,4 +1,4 @@
-import ApiClient from '../services/api';
+import ApiClient from 'data/services/api';
 
 export const LOADING_DISPLAY = 'display/LOADING_DISPLAY';
 export const SUCCESS_DISPLAY = 'display/SUCCESS_DISPLAY';

@@ -1,0 +1,252 @@
+.single-post {
+  margin-top: 59px;
+}
+
+.single-post__wrapper {
+  width: 100%;
+  height: 425px;
+  margin-bottom: 59px;
+  box-shadow: $main-shadow;
+  background-color: $color-grey_23;
+}
+
+.single-post__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.single-post__title {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.single-post__info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.single-post__categories {
+  margin-top: 3px;
+  margin-right: 40px;
+}
+
+.single-post__category {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 5px;
+  padding: 8px 14px;
+  border-radius: 3px;
+  color: $color-white;
+  background-color: $color-orange;
+}
+
+.single-post__date {
+  display: block;
+  font-size: 16px;
+}
+
+.single-post__actions {
+  display: flex;
+  margin-top: 28px;
+  padding: 21px 0 20px;
+  justify-content: space-between;
+  border-top: 2px solid $color-black;
+  border-bottom: 2px solid $color-black;
+}
+
+.single-post__share {
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.single-post__metas {
+  display: flex;
+  color: $color-grey_91;
+}
+
+.single-post__meta {
+  font-size: 14px;
+  margin-left: 31px;
+  text-transform: uppercase;
+}
+
+.single-post__paragraph {
+  font-size: 18px;
+  margin-top: 35px;
+  line-height: 1.3em;
+  font-family: $secondary-font;
+
+  .single-post__quote & {
+    font-size: 32px;
+    font-weight: 600;
+    position: relative;
+    margin: 116px -50px 100px 100px;
+
+    &:before {
+      content: '"';
+      top: -15px;
+      left: -45px;
+      font-size: 80px;
+      font-weight: 600;
+      position: absolute;
+      font-family: $main-font;
+    }
+  }
+
+  .single-post__text & {
+    padding-right: 100px;
+  }
+}
+
+.single-post__link {
+  cursor: pointer;
+  color: $color-orange;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.single-post__gallery {
+  width: 100%;
+  height: 420px;
+  display: flex;
+  margin-top: 105px;
+  position: relative;
+  align-items: center;
+  box-shadow: $main-shadow;
+}
+
+.single-post__gallery-image {
+  width: 100%;
+  height: 100%;
+  display: none;
+  object-fit: cover;
+}
+
+.single-post__gallery-image--active {
+  display: block;
+}
+
+.single-post__arrow {
+  cursor: pointer;
+  width: 68px;
+  position: absolute;
+  fill: $color-orange;
+  transition: fill $timer2;
+
+  &:hover {
+    fill: $color-orange_dark;
+  }
+}
+
+.single-post__arrow--left {
+  left: -98px;
+}
+
+.single-post__arrow--right {
+  right: -98px;
+  transform: rotate(-180deg);
+}
+
+.single-post__gallery-quantity {
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  height: 70px;
+  width: 170px;
+  display: flex;
+  font-size: 28px;
+  position: absolute;
+  color: $color-white;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-orange;
+}
+
+.single-post__text {
+  margin-top: 64px;
+}
+
+.single-post__related-title {
+  font-size: 36px;
+  margin: 31px 0 87px;
+  text-transform: uppercase;
+}
+
+.single-blog__item {
+  height: 392px;
+  display: block;
+  position: relative;
+  margin-bottom: 70px;
+  box-shadow: $main-shadow;
+  transition: box-shadow $timer3;
+  background-color: $color-grey_C4;
+
+  &:hover {
+    box-shadow: $hover-shadow;
+  }
+}
+
+.single-blog__item-info {top: 0;
+  left: 16px;
+  z-index: 1;
+  width: 230px;
+  margin-top: -18px;
+  position: absolute;
+  color: #fff;
+  padding: 50px 30px 30px;
+  background-color: #fd6a01;
+  transition: background-color $timer3;
+
+  .single-packages__item:hover & {
+    background-color: darken($color-orange, 5);
+  }
+}
+
+.single-packages__item-title {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.single-packages__item-description {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 12px;
+  text-transform: uppercase;
+
+  &:after {
+    content: '';
+    width: 90%;
+    height: 2px;
+    display: block;
+    margin: 23px 0;
+    background-color: $color-black;
+  }
+}
+
+.single-packages__item-time {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.single-packages__item-button {
+  cursor: pointer;
+  border: 0;
+  font-size: 18px;
+  margin-top: 42px;
+  padding: 14px 39.5px;
+  text-transform: uppercase;
+  background-color: $color-white;
+}
+
+.single-packages__item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

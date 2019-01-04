@@ -1,4 +1,4 @@
-import ApiClient from '../services/api';
+import ApiClient from 'data/services/api';
 
 export const LOADING_BLOG_POSTS = 'blog/LOADING_BLOG_POSTS';
 export const SUCCESS_BLOG_POSTS = 'blog/SUCCESS_BLOG_POSTS';
@@ -24,4 +24,19 @@ export default () => (dispatch) => {
   return ApiClient.getBlogPosts()
     .then(response => dispatch(successBlogPosts(response)))
     .catch(error => dispatch(errorBlogPosts(error)));
+};
+
+export const SUCCESS_POST = 'blog/SUCCESS_POST';
+
+const successBlog = (payload = {}) => ({
+  type: SUCCESS_POST,
+  payload
+});
+
+export const fetchPost = id => (dispatch) => {
+  dispatch(loadingBlogPosts());
+
+  return ApiClient.getPost(id)
+    .then(response => dispatch(successBlog(response)))
+    .catch(error => dispatch(loadingBlogPosts(error)));
 };

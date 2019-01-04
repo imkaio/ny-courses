@@ -2,7 +2,7 @@ import {
   LOADING_DISPLAY,
   SUCCESS_DISPLAY,
   ERROR_DISPLAY
-} from '../actions/display';
+} from 'data/actions/display';
 
 const initialState = {
   loading: false,

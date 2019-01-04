@@ -4,7 +4,7 @@ import Display from 'containers/display';
 import FeaturedPackages from 'containers/packages/featured';
 import FeaturedBlog from 'containers/blog/featured';
 import { Link } from 'react-router-dom';
-import { Consumer } from '../../client/context';
+import { Consumer } from 'app/client/context';
 
 const Home = () => {
   const cards = ['PASSEIOS', 'ROTEIROS', 'ACOMODACOES'];
