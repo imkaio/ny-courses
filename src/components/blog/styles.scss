@@ -5,6 +5,12 @@
   margin-top: 68px;
 }
 
+.blog__no-posts {
+  font-size: 22px;
+  margin-top: 30px;
+  display: block;
+}
+
 .blog__title {
   font-size: 36px;
   text-transform: uppercase;
@@ -20,6 +26,7 @@
   height: 392px;
   display: block;
   position: relative;
+  margin-bottom: 80px;
   box-shadow: $main-shadow;
   transition: box-shadow $timer3;
   background-color: $color-grey_23;
