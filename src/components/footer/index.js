@@ -10,7 +10,7 @@ const Footer = ({ items }) => (
         <div className="container">
           <div className="row">
             {items.map(item => (
-              <ul className="col-xs-2" key={item.language}>
+              <ul className="col-xs-10 col-xs-offset-1 col-md-2 col-md-offset-0" key={item.language}>
                 <li>
                   <Link className="footer__item" to={item.path}>{content[item.language]}</Link>
                 </li>

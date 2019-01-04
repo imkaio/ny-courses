@@ -23,7 +23,7 @@ const Home = () => {
           <div className="home__cards container">
             <div className="row">
               {cards.map(card => (
-                <div className="col-xs-4" key={card}>
+                <div className="col-xs-12 col-md-4" key={card}>
                   <Link className="home__card" to="/">
                     <span className="home__card-title">{content[card]}</span>
                     <span className="home__card-description">{content[`${card}_DESCRICAO`]}</span>
@@ -41,7 +41,7 @@ const Home = () => {
 
               <div className="row">
                 {advantages.map((advantage, index) => (
-                  <div className={`col-xs-2 ${!index ? 'col-xs-offset-3' : ''}`} key={advantage.language}>
+                  <div className={`col-xs-10 col-xs-offset-1 col-md-2 ${!index ? 'col-md-offset-3' : ''}`} key={advantage.language}>
                     <div className="home__advantage-icon-wrapper">
                       <Isvg className="home__advantage-icon" src={`/images/icon-${advantage.icon}.svg`} />
                     </div>

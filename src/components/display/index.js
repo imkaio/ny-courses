@@ -39,14 +39,14 @@ class Display extends Component {
         {content => (
           <section className="display container">
             <div className="row">
-              <div className="col-xs-4">
+              <div className="col-xs-12 col-md-4">
                 <div className="display__info">
                   <h1 className="display__info-title">{content.PACOTES_PROMOCIONAIS}</h1>
                   <h2 className="display__info-description">{content.CONFERIR_PACOTES}</h2>
                 </div>
               </div>
 
-              <div className="col-xs-8">
+              <div className="col-xs-12 col-md-8">
                 {this.props.payload.map((item, index) => (
                   <article className={`display__item ${index === this.state.active ? 'display__item--active' : ''}`} key={item.id}>
                     <div className="display__item-wrapper">

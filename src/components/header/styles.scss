@@ -11,28 +11,55 @@
 .header__info-bar {
   display: flex;
   padding: 15px 0 11px;
+  flex-direction: column;
   justify-content: space-between;
+
+  @include media('>=md') {
+    flex-direction: row;
+  }
 }
 
 .header__info-bar--left {
   display: flex;
+  justify-content: center;
+  
+  @include media('>=md') {
+    flex-wrap: unset;
+    justify-content: unset;
+  }
 }
 
 .header__social {
   display: flex;
-  margin-top: -5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-right: 24px;
   align-items: center;
   transition: $timer2;
   transition-property: color, fill;
 
+  @include media('>=md') {
+    margin-top: -5px;
+    margin-bottom: 0;
+  }
+
   &:first-child:after {
-    content: '';
-    width: 2px;
-    height: 100%;
-    display: flex;
-    margin-left: 22px;
-    background: $color-black;
+    @include media('>=md') {
+      content: '';
+      width: 2px;
+      height: 100%;
+      display: flex;
+      margin-left: 22px;
+      background: $color-black;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+
+    @include media('>=md') {
+      margin-right: 24px;
+    }
   }
 
   &:hover {
@@ -42,20 +69,32 @@
 }
 
 .header__social-icon {
-  width: 16px;
+  width: 18px;
   display: block;
   margin-right: 5px;
+
+  @include media('>=md') {
+    width: 16px;
+  }
 }
 
 .header__social-label {
-  font-size: 14px;
+  font-size: 16px;
   white-space: pre-line;
   text-transform: uppercase;
+
+  @include media('>=md') {
+    font-size: 14px;
+  }
 }
 
 .header__language {
-  display: flex;
+  display: none;
   margin-top: -3px;
+  
+  @include media('>=md') {
+    display: flex;
+  }
 }
 
 .header__language-button {
@@ -87,11 +126,17 @@
 }
 
 .header__title {
-  width: 208px;
-  height: 94px;
+  width: 160px;
+  height: 70px;
   font-size: 0;
   display: block;
   background-image: url('/images/image-logo.png');
   background-position: 1px -16px;
   background-size: 100%;
+  background-repeat: no-repeat;
+
+  @include media('>=md') {
+    width: 208px;
+    height: 94px;
+  }
 }

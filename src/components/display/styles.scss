@@ -7,11 +7,14 @@
 
 .display__info {
   width: 100%;
-  padding: 141px 70px 123px;
+  padding: 40px;
   color: $color-white;
   text-transform: uppercase;
   background-color: $color-orange_dark;
   
+  @include media('>=md') {
+    padding: 141px 70px 123px;
+  }
 }
 
 .display__info-title {
@@ -28,14 +31,19 @@
 }
 
 .display__item {
-  height: 422px;
+  height: 300px;
   display: none;
   padding: 67px 87px;
   position: relative;
   margin-left: rem(-30);
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: calc(100% + #{rem(30)});
+
+  @include media('>=md') {
+    height: 422px;
+    justify-content: flex-end;
+  }
 }
 
 .display__item--active {

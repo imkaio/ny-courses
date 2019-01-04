@@ -5,15 +5,21 @@
 .home__card {
   cursor: pointer;
   width: 100%;
+  padding: 30px;
   display: block;
   border-radius: 5px;
   text-align: center;
   color: $color-white;
-  padding: 70px 30px 75px;
+  margin-bottom: 15px;
   text-transform: uppercase;
   transition: 377ms ease-in-out;
   background-color: $color-grey_23;
   transition-property: box-shadow, transform;
+
+  @include media('>=md') {
+    margin-bottom: 0;
+    padding: 70px 30px 75px;
+  }
 
   &:hover {
     box-shadow: $main-shadow;

@@ -31,7 +31,7 @@ class FeaturedPackages extends Component {
 
               <div className="row featured-packages__items">
                 {this.props.payload.map(item => (
-                  <article className="col-xs-4" key={item.id}>
+                  <article className="col-xs-12 col-md-4" key={item.id}>
                     <Link className="featured-packages__item" to={`/pacotes/${item.id}`}>
                       <div className="featured-packages__item-info">
                         <h1 className="featured-packages__item-title">{item.title}</h1>

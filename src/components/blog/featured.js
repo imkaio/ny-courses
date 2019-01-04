@@ -21,14 +21,14 @@ class FeaturedBlog extends Component {
           <section className="blog-featured">
             <div className="container">
               <div className="row">
-                <div className="col-xs-3 col-xs-offset-1">
+                <div className="col-xs-12 col-md-3 col-md-offset-1">
                   <h1 className="blog-featured__title">{content.BLOG}</h1>
                   <p className="blog-featured__description">{content.BLOG_DESCRICAO}</p>
                   <Link className="blog-featured__button" to="/blog">{content.LER_MAIS}</Link>
                 </div>
 
                 {this.props.posts.map(post => (
-                  <article key={post.id} className="col-xs-4">
+                  <article key={post.id} className="col-md-4 col-xs-12">
                     <Link className="blog-featured__item" to={`/blog/${post.id}`}>
                       <div className="blog-featured__item-wrapper">
                         {post.image && (

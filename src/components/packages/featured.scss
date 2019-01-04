@@ -12,11 +12,17 @@
 }
 
 .featured-packages__item {
-  height: 518px;
+  height: 400px;
   display: block;
   position: relative;
+  margin-bottom: 15px;
   box-shadow: $main-shadow;
   transition: box-shadow $timer3;
+
+  @include media('>=md') {
+    height: 518px;
+    margin-bottom: 0;
+  }
 
   &:hover {
     box-shadow: $hover-shadow;
