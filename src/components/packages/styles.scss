@@ -1,2 +1,66 @@
 @import './single';
 @import './featured';
+
+.packages {
+  margin-top: 68px;
+}
+
+.packages__no-packages {
+  font-size: 22px;
+}
+
+.packages__title {
+  font-size: 36px;
+  margin-bottom: 77px;
+  text-transform: uppercase;
+}
+
+.package__item {
+  height: 392px;
+  display: block;
+  position: relative;
+  margin-bottom: 80px;
+  box-shadow: $main-shadow;
+  transition: box-shadow $timer3;
+  background-color: $color-grey_23;
+
+  &:hover {
+    box-shadow: $hover-shadow;
+  }
+}
+
+.package__item-info {
+  z-index: 1;
+  top: -18px;
+  left: 16px;
+  width: 230px;
+  position: absolute;
+  color: $color-white;
+  padding: 51px 38px 30px 30px;
+  background-color: $color-orange;
+  transition: background-color $timer3;
+
+  .blog__post:hover & {
+    background-color: darken($color-orange, 5);
+  }
+}
+
+.package__item-title {
+  font-size: 24px;
+}
+
+.package__item-description {
+  font-size: 14px;
+  margin-top: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  &:after {
+    content: '';
+    width: 90%;
+    height: 2px;
+    display: block;
+    margin: 23px 0;
+    background-color: $color-black;
+  }
+}
