@@ -39,8 +39,8 @@ class Blog extends Component {
                         <button className="blog__post-button">{content.LER}</button>
                       </div>
 
-                      {post.images[0] && (
-                        <img className="blog__post-image" src={post.images[0] } alt={post.title} />
+                      {post.image && (
+                        <img className="blog__post-image" src={post.image} alt={post.title} />
                       )}
                     </Link>
                   </article>
@@ -60,8 +60,8 @@ class Blog extends Component {
                       <button className="blog__post-button">{content.LER}</button>
                     </div>
 
-                    {post.images[0] && (
-                      <img className="blog__post-image" src={post.images[0] } alt={post.title} />
+                    {post.image && (
+                      <img className="blog__post-image" src={post.image} alt={post.title} />
                     )}
                   </Link>
                 </article>

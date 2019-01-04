@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Consumer } from 'app/client/context';
+import { truncateText } from 'app/utils/functions';
 
 class FeaturedBlog extends Component {
   static propTypes = {
@@ -30,11 +31,13 @@ class FeaturedBlog extends Component {
                   <article key={post.id} className="col-xs-4">
                     <Link className="blog-featured__item" to={`/blog/${post.id}`}>
                       <div className="blog-featured__item-wrapper">
-                        <img className="blog-featured__item-image" src={post.images[0]} alt={post.title} />
+                        {post.image && (
+                          <img className="blog-featured__item-image" src={post.image} alt={post.title} />
+                        )}
                       </div>
                       <div className="blog-featured__item-info">
                         <h1 className="blog-featured__item-title">{post.title}</h1>
-                        <p className="blog-featured__item-description">{post.description.slice(0, 95)}...</p>
+                        <p className="blog-featured__item-description">{truncateText(post.description, 95)}</p>
                       </div>
                     </Link>
                   </article>

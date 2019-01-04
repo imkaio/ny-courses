@@ -24,8 +24,31 @@
   font-weight: 700;
   margin-top: 58px;
   padding: 14px 21px;
+  position: relative;
   text-transform: uppercase;
   border: 3px solid $color-grey_23;
+  transition: color $timer3 ease-in-out;
+
+  &:after {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    z-index: -1;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: $color-grey_23;
+    transition: width $timer3 ease-in-out;
+  }
+
+  &:hover {
+    color: $color-white;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
 }
 
 .blog-featured__item {

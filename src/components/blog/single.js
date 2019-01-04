@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Isvg from 'react-inlinesvg';
 import { Link } from 'react-router-dom';
 import { Consumer } from 'app/client/context';
-import { formatDate, transformToHour } from 'app/utils/functions';
+import { formatDate } from 'app/utils/functions';
 import CustomMarkdown from 'app/utils/custom-markdown';
 
 class SingleBlog extends Component {
@@ -68,6 +68,7 @@ class SingleBlog extends Component {
 
   render() {
     const { post, related } = this.props;
+    const relatedPosts = related.filter(relatedItem => post.related?.includes(relatedItem.id));
 
     return (
       <Consumer>
@@ -159,30 +160,28 @@ class SingleBlog extends Component {
                 />
               </div>
 
-              {!!post.related?.length && !!related?.length && (
+              {!!relatedPosts?.length && (
                 <div className="single-post__related">
                   <h2 className="single-post__related-title">{content.POSTS_RELACIONADOS}</h2>
                   <div className="row">
-                    {related
-                      .filter(relatedItem => post.related.includes(relatedItem.id))
-                      .map(related => (
-                        <article className="col-xs-4" key={related.id}>
-                          <Link className="single-blog__item" to={`/pacotes/${related.id}`}>
-                            <div className="single-packages__item-info">
-                              <h1 className="single-packages__item-title">{related.title}</h1>
-                              <h2 className="single-packages__item-description">{related.description.slice(0, 30)}...</h2>
-                              <span className="single-packages__item-time">{related.weeklyDuration} {content.SEMANAS_DE_CURSO}</span>
-                              <span className="single-packages__item-time">{transformToHour(related.hourlyDuration)} {content.HORAS_SEMANAIS}</span>
+                    {related.map(related => (
+                      <article className="col-xs-4" key={related.id}>
+                        <Link className="single-blog__item" to={`/pacotes/${related.id}`}>
+                          <div className="single-blog__item-info">
+                            <h1 className="single-blog__item-title">{related.title}</h1>
+                            <time className="single-blog__item-time" dateTime={related.date}>{formatDate(related.date, content)}</time>
+                            <span className="single-blog__item-meta">{content.POST_POR}: {related.author}</span>
+                            <span className="single-blog__item-meta">{content.PUBLICADO}: {related.publisher}</span>
 
-                              <button className="single-packages__item-button">{content.ORCAMENTO}</button>
-                            </div>
+                            <button className="single-blog__item-button">{content.LER}</button>
+                          </div>
 
-                            {related.image && (
-                              <img className="single-packages__item-image" src={related.image} alt={related.title} />
-                            )}
-                          </Link>
-                        </article>
-                      ))}
+                          {related.image && (
+                            <img className="single-blog__item-image" src={related.image} alt={related.title} />
+                          )}
+                        </Link>
+                      </article>
+                    ))}
                   </div>
                 </div>
               )}

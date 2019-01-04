@@ -90,7 +90,7 @@ export default {
         highlight: record.fields.Destaque,
         title: record.fields.Titulo,
         text: record.fields.Texto,
-        images: record.fields.Imagens.map(image => image.url),
+        image: record.fields.Imagens && record.fields.Imagens[0]?.url,
         author: record.fields.Autor,
         publisher: record.fields.Publicador,
         date: record.fields.DataPublicacao,

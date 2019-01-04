@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Consumer } from 'app/client/context';
-import { transformToHour } from 'app/utils/functions';
+import { transformToHour, truncateText } from 'app/utils/functions';
 import CustomMarkdown from 'app/utils/custom-markdown';
 
 class SinglePackages extends Component {
@@ -42,6 +42,7 @@ class SinglePackages extends Component {
 
   render() {
     const { package: item, payload } = this.props;
+    const related = payload.filter(payloadItem => item.related?.includes(payloadItem.id));
 
     return (
       <Consumer>
@@ -64,7 +65,7 @@ class SinglePackages extends Component {
                   <div className="single-packages__sticky">
                     <div className="single-packages__info">
                       <h1 className="single-packages__title">{item.title}</h1>
-                      <h2 className="single-packages__description">{item.description}</h2>
+                      <h2 className="single-packages__description">{truncateText(item.description, 30)}</h2>
 
                       {item.hourlyDuration && (
                         <span className="single-packages__topic">{transformToHour(item.hourlyDuration)} {content.HORAS_SEMANAIS}</span>
@@ -126,30 +127,28 @@ class SinglePackages extends Component {
                     </Fragment>
                   )}
 
-                  {!!item.related?.length && !!payload?.length && (
+                  {!!related?.length && (
                     <div className="single-packages__related">
                       <h2 className="single-packages__related-title">{content.OUTROS_PACOTES}</h2>
                       <div className="row">
-                        {payload
-                          .filter(payloadItem => item.related.includes(payloadItem.id))
-                          .map(related => (
-                            <article className="col-xs-6" key={related.id}>
-                              <Link className="single-packages__item" to={`/pacotes/${related.id}`}>
-                                <div className="single-packages__item-info">
-                                  <h1 className="single-packages__item-title">{related.title}</h1>
-                                  <h2 className="single-packages__item-description">{related.description}</h2>
-                                  <span className="single-packages__item-time">{related.weeklyDuration} {content.SEMANAS_DE_CURSO}</span>
-                                  <span className="single-packages__item-time">{transformToHour(related.hourlyDuration)} {content.HORAS_SEMANAIS}</span>
+                        {related.map(related => (
+                          <article className="col-xs-6" key={related.id}>
+                            <Link className="single-packages__item" to={`/pacotes/${related.id}`}>
+                              <div className="single-packages__item-info">
+                                <h1 className="single-packages__item-title">{related.title}</h1>
+                                <h2 className="single-packages__item-description">{related.description}</h2>
+                                <span className="single-packages__item-time">{related.weeklyDuration} {content.SEMANAS_DE_CURSO}</span>
+                                <span className="single-packages__item-time">{transformToHour(related.hourlyDuration)} {content.HORAS_SEMANAIS}</span>
 
-                                  <button className="single-packages__item-button" onClick={this.handleModal(related.id)}>{content.ORCAMENTO}</button>
-                                </div>
+                                <button className="single-packages__item-button" onClick={this.handleModal(related.id)}>{content.ORCAMENTO}</button>
+                              </div>
 
-                                {related.image && (
-                                  <img className="single-packages__item-image" src={related.image} alt={related.title} />
-                                )}
-                              </Link>
-                            </article>
-                          ))}
+                              {related.image && (
+                                <img className="single-packages__item-image" src={related.image} alt={related.title} />
+                              )}
+                            </Link>
+                          </article>
+                        ))}
                       </div>
                     </div>
                   )}

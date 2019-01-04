@@ -15,3 +15,8 @@ export const formatDate = (date = '', content = {}) => {
 
   return `${day < 10 ? `0${day}` : day} ${content.DE} ${content[`MES_${month}`]} ${content.DE} ${year}`;
 };
+
+export const truncateText = (text = '', length = 0) => {
+  const truncatedText = text.slice(0, length);
+  return truncatedText.length !== text.length ? `${truncatedText}...` : text;
+};
