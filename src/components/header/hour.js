@@ -10,13 +10,17 @@ class HeaderHour extends Component {
     this.generateDate();
   }
 
+  componentWillUnmount() {
+    return this.timeout && clearTimeout(this.timeout);
+  }
+
   generateDate = () => {
     const date = new Date();
     const nyDate = date.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour12: false });
     const [minutes, seconds, ms] = nyDate.split(':');
     const renewNyTime = (60 - ms) * 100;
 
-    setTimeout(this.generateDate, renewNyTime);
+    this.timeout = setTimeout(this.generateDate, renewNyTime);
 
     this.setState(() => ({ date: `${minutes}:${seconds}` }));
   }

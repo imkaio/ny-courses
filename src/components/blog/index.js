@@ -35,7 +35,7 @@ class Blog extends Component {
                       <h2 className="blog__subtitle">{content.MAIS_LIDOS}</h2>
                       <div className="row">
                         {highlightPosts.map(post => (
-                          <article className="col-xs-4" key={post.id}>
+                          <article className="col-xs-12 col-md-4" key={post.id}>
                             <Link className="blog__post" to={`/blog/${post.id}`}>
                               <div className="blog__post-info">
                                 <h1 className="blog__post-title">{post.title}</h1>
@@ -60,7 +60,7 @@ class Blog extends Component {
                     <Fragment>
                       <h2 className="blog__subtitle">{content.TALVEZ_POSSA_GOSTAR}</h2>
                       {posts.map(post => (
-                        <article className="col-xs-4" key={post.id}>
+                        <article className="col-xs-12 col-md-4" key={post.id}>
                           <Link className="blog__post" to={`/blog/${post.id}`}>
                             <div className="blog__post-info">
                               <h1 className="blog__post-title">{post.title}</h1>

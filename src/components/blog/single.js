@@ -82,11 +82,11 @@ class SingleBlog extends Component {
               </div>
 
               <div className="row">
-                <div className="col-xs-5 col-xs-offset-1">
+                <div className="col-xs-12 col-md-5 col-md-offset-1">
                   <h1 className="single-post__title">{post.title}</h1>
                 </div>
 
-                <div className="col-xs-4 col-xs-offset-1">
+                <div className="col-xs-12 col-md-4 col-md-offset-1">
                   <div className="single-post__info">
                     <ul className="single-post__categories">
                       {post.categories?.map(category => (
@@ -100,7 +100,7 @@ class SingleBlog extends Component {
               </div>
 
               <div className="row">
-                <div className="col-xs-10 col-xs-offset-1">
+                <div className="col-xs-12 col-md-10 col-md-offset-1">
                   <div className="single-post__actions">
                     <span className="single-post__share" onClick={this.handleShare}>{content.COMPARTILHAR_FACEBOOK}</span>
                     <div className="single-post__metas">
@@ -112,7 +112,7 @@ class SingleBlog extends Component {
               </div>
 
               <div className="row">
-                <div className="col-xs-8 col-xs-offset-1">
+                <div className="col-xs-12 col-md-8 col-md-offset-1">
                   <CustomMarkdown
                     classes={{
                       paragraph: 'single-post__paragraph',
@@ -151,7 +151,7 @@ class SingleBlog extends Component {
               <div className="row">
                 <CustomMarkdown
                   source={post.text}
-                  className="single-post__text col-xs-9 col-xs-offset-1"
+                  className="single-post__text col-xs-12 col-md-9 col-md-offset-1"
                   classes={{
                     paragraph: 'single-post__paragraph',
                     blockquote: 'single-post__quote',
@@ -165,7 +165,7 @@ class SingleBlog extends Component {
                   <h2 className="single-post__related-title">{content.POSTS_RELACIONADOS}</h2>
                   <div className="row">
                     {related.map(related => (
-                      <article className="col-xs-4" key={related.id}>
+                      <article className="col-xs-12 col-md-4" key={related.id}>
                         <Link className="single-blog__item" to={`/pacotes/${related.id}`}>
                           <div className="single-blog__item-info">
                             <h1 className="single-blog__item-title">{related.title}</h1>

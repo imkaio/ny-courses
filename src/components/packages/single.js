@@ -61,7 +61,7 @@ class SinglePackages extends Component {
               </div>
 
               <div className="row">
-                <div className="col-xs-4 col-xs-offset-1">
+                <div className="col-xs-10 col-xs-offset-1 col-md-4">
                   <div className="single-packages__sticky">
                     <div className="single-packages__info">
                       <h1 className="single-packages__title">{item.title}</h1>
@@ -88,7 +88,7 @@ class SinglePackages extends Component {
                   </div>
                 </div>
 
-                <div className="col-xs-6 col-xs-offset-1">
+                <div className="col-xs-10 col-xs-offset-1 col-md-6">
                   <CustomMarkdown
                     source={item.text}
                     className="single-packages__content"
@@ -132,7 +132,7 @@ class SinglePackages extends Component {
                       <h2 className="single-packages__related-title">{content.OUTROS_PACOTES}</h2>
                       <div className="row">
                         {related.map(related => (
-                          <article className="col-xs-6" key={related.id}>
+                          <article className="col-xs-12 col-md-6" key={related.id}>
                             <Link className="single-packages__item" to={`/pacotes/${related.id}`}>
                               <div className="single-packages__item-info">
                                 <h1 className="single-packages__item-title">{related.title}</h1>
