@@ -33,7 +33,7 @@ class Packages extends Component {
                 {!this.props.packages?.length && !this.props.loading ? (
                   <span className="col-xs-12 packages__no-packages">{content.SEM_PACOTES}</span>
                 ) : this.props.packages.map(item => (
-                  <article className="col-xs-4" key={item.id}>
+                  <article className="col-xs-12 col-md-4" key={item.id}>
                     <Link className="package__item" to={`/pacotes/${item.id}`}>
                       <div className="package__item-info">
                         <h1 className="package__item-title">{item.title}</h1>

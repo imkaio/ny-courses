@@ -35,7 +35,7 @@ class Menu extends Component {
               <ul className="menu__items">
                 {items.map(item => (
                   <li key={item.language}>
-                    <Link className="menu__item" to={item.path}>{content[item.language]}</Link>
+                    <Link onClick={this.toggleMenu} className="menu__item" to={item.path}>{content[item.language]}</Link>
                   </li>
                 ))}
               </ul>
