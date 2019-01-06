@@ -1,0 +1,27 @@
+.language {
+  display: flex;
+  margin-top: -3px;
+}
+
+.language-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  display: flex;
+  font-size: 14px;
+  background: none;
+  transition: color $timer2;
+
+  &:hover {
+    color: $color-orange;
+  }
+
+  &:first-child:after {
+    content: '';
+    width: 2px;
+    height: 13px;
+    display: block;
+    margin: 5px 4px 0;
+    background-color: $color-black;
+  }
+}

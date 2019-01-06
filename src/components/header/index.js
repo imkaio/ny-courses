@@ -1,6 +1,8 @@
 import React from 'react';
 import Menu from 'containers/menu';
 import Isvg from 'react-inlinesvg';
+import Language from 'components/language';
+import HeaderHour from 'components/header/hour';
 import { Link } from 'react-router-dom';
 import { Consumer } from 'app/client/context';
 
@@ -27,9 +29,9 @@ const Header = () => (
               </a>
             </div>
 
-            <div className="header__language">
-              <button className="header__language-button">BR</button>
-              <button className="header__language-button">EN</button>
+            <div className="header__info-bar--right">
+              <HeaderHour />
+              <Language />
             </div>
           </div>
         </div>

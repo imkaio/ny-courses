@@ -29,6 +29,17 @@
   }
 }
 
+.header__info-bar--right {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+
+  @include media('>=md') {
+    margin-top: 0;
+    justify-content: unset;
+  }
+}
+
 .header__social {
   display: flex;
   margin-top: 10px;
@@ -89,38 +100,6 @@
   }
 }
 
-.header__language {
-  display: none;
-  margin-top: -3px;
-  
-  @include media('>=md') {
-    display: flex;
-  }
-}
-
-.header__language-button {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  display: flex;
-  font-size: 14px;
-  background: none;
-  transition: color $timer2;
-
-  &:hover {
-    color: $color-orange;
-  }
-
-  &:first-child:after {
-    content: '';
-    width: 2px;
-    height: 13px;
-    display: block;
-    margin: 5px 4px 0;
-    background-color: $color-black;
-  }
-}
-
 .header__main {
   padding: 16px 0 15px;
   background-color: $color-orange;
@@ -140,4 +119,13 @@
     width: 208px;
     height: 94px;
   }
+}
+
+.header__hour {
+  display: flex;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  margin-right: 16px;
+  background-color: $color-grey_E5;
 }

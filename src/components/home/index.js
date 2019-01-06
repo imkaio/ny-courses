@@ -41,7 +41,7 @@ const Home = () => {
 
               <div className="row">
                 {advantages.map((advantage, index) => (
-                  <div className={`col-xs-10 col-xs-offset-1 col-md-2 ${!index ? 'col-md-offset-3' : ''}`} key={advantage.language}>
+                  <div className={`col-xs-10 col-xs-offset-1 col-md-2 ${!index ? 'col-md-offset-3' : 'col-md-offset-0'}`} key={advantage.language}>
                     <div className="home__advantage-icon-wrapper">
                       <Isvg className="home__advantage-icon" src={`/images/icon-${advantage.icon}.svg`} />
                     </div>
