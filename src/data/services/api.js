@@ -125,5 +125,16 @@ export default {
       url: `${process.env.SITE_URL}/functions/form.php`,
       config: { headers: { 'Content-Type': 'multipart/form-data' } }
     });
+  },
+  postContact: (data) => {
+    const body = new FormData();
+    Object.entries(data).forEach(([key, value]) => body.append(key, value));
+
+    return axios({
+      data: body,
+      method: 'POST',
+      url: `${process.env.SITE_URL}/functions/contact.php`,
+      config: { headers: { 'Content-Type': 'multipart/form-data' } }
+    });
   }
 };

@@ -1,0 +1,63 @@
+.contact {
+  margin-top: 72px;
+}
+
+.contact__title {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.contact__description {
+  font-size: 18px;
+  margin-top: 38px;
+  line-height: 1.3em;
+  font-family: $secondary-font;
+}
+
+.contact__social-title {
+  font-size: 36px;
+  font-weight: 400;
+  margin: 62px 0 43px;
+}
+
+.contact__social-item {
+  display: flex;
+  margin-bottom: 21px;
+}
+
+.contact__social-icon {
+  width: 18px;
+}
+
+.contact__social-label {
+  display: block;
+  margin-left: 7px;
+  text-transform: uppercase;
+}
+
+.contact__form {
+  margin-top: 75px;
+}
+
+.contact__form-button {
+  cursor: pointer;
+  border: 0;  
+  height: 70px;
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  margin-top: 29px;
+  margin-left: auto;
+  color: $color-white;
+  text-transform: uppercase;
+  background-color: $color-orange;
+  transition: background-color $timer3;
+
+  @include media('>=md') {
+    width: 370px;
+  }
+  
+  &:hover {
+    background-color: $color-orange_dark;
+  }
+}

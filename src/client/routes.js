@@ -10,6 +10,7 @@ import Packages from 'containers/packages';
 import SinglePackages from 'containers/packages/single';
 import Blog from 'containers/blog';
 import SingleBlog from 'containers/blog/single';
+import Contact from 'components/contact';
 
 class Routes extends Component {
   static propTypes = {
@@ -40,6 +41,7 @@ class Routes extends Component {
           <Route path="/pacotes/:id" component={SinglePackages} />
           <Route exact path="/blog" component={Blog} />
           <Route path="/blog/:id" component={SingleBlog} />
+          <Route path="/contato" component={Contact} />
         </Switch>
 
         <Footer />
