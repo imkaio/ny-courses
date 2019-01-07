@@ -16,8 +16,19 @@ class Menu extends Component {
     isOpen: false
   }
 
+  handleScroll = () => {
+    const { isOpen } = this.state;
+    const html = document.querySelector('html');
+
+    if (isOpen) {
+      html.style.overflowY = 'hidden';
+    } else {
+      html.style.overflowY = '';
+    }
+  }
+
   toggleMenu = () => {
-    this.setState(state => ({ isOpen: !state.isOpen }));
+    this.setState(state => ({ isOpen: !state.isOpen }), this.handleScroll);
   }
 
   render() {
