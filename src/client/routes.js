@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'app/client/context';
 import { animateScroll } from 'react-scroll';
@@ -12,6 +12,7 @@ import Blog from 'containers/blog';
 import SingleBlog from 'containers/blog/single';
 import Contact from 'components/contact';
 import StaticPage from 'containers/static-page';
+import Loading from 'components/loading';
 
 class Routes extends Component {
   static propTypes = {
@@ -32,24 +33,29 @@ class Routes extends Component {
   }
 
   render() {
-    return Object.keys(this.props.payload).length ? (
-      <Provider value={this.props.payload}>
-        <Header />
+    const loaded = !!Object.keys(this.props.payload).length;
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/pacotes" component={Packages} />
-          <Route path="/pacotes/:id" component={SinglePackages} />
-          <Route exact path="/blog" component={Blog} />
-          <Route path="/blog/:id" component={SingleBlog} />
-          <Route path="/contato" component={Contact} />
-          <Route path="/:static" component={StaticPage} />
-        </Switch>
+    return (
+      <Fragment>
+        <Loading loaded={loaded} />
+        {loaded && (
+          <Provider value={this.props.payload}>
+            <Header />
 
-        <Footer />
-      </Provider>
-    ) : (
-      <h1>Loading</h1>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/pacotes" component={Packages} />
+              <Route path="/pacotes/:id" component={SinglePackages} />
+              <Route exact path="/blog" component={Blog} />
+              <Route path="/blog/:id" component={SingleBlog} />
+              <Route path="/contato" component={Contact} />
+              <Route path="/:static" component={StaticPage} />
+            </Switch>
+
+            <Footer />
+          </Provider>
+        )}
+      </Fragment>
     );
   }
 }

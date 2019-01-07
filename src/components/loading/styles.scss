@@ -1,0 +1,51 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  } 
+  45% {
+    transform: scale(0.1);
+    opacity: 0.7;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.loading__wrapper {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-white;
+  transition: opacity $timer4;
+}
+
+.loading__wrapper--fadeout {
+  opacity: 0;
+}
+
+.loading__wrapper--hide {
+  display: none;
+}
+
+.loading {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: $color-orange;
+  animation-name: pulse;
+  animation-duration: $timer5;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.2,.68,.18,1.08);
+}
