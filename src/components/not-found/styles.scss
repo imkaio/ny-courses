@@ -1,0 +1,23 @@
+.not-found {
+  margin-top: 72px;
+}
+
+.not-found__title {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.not-found__description {
+  font-size: 18px;
+  margin-top: 20px;
+  color: $color-orange;
+}
+
+.not-found__link {
+  margin-top: 30px;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

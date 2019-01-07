@@ -24,7 +24,7 @@ const Home = () => {
             <div className="row">
               {cards.map(card => (
                 <div className="col-xs-12 col-md-4" key={card}>
-                  <Link className="home__card" to="/">
+                  <Link className="home__card" to={content[`${card}_LINK`]}>
                     <span className="home__card-title">{content[card]}</span>
                     <span className="home__card-description">{content[`${card}_DESCRICAO`]}</span>
                   </Link>

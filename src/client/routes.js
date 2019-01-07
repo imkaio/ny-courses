@@ -11,6 +11,7 @@ import SinglePackages from 'containers/packages/single';
 import Blog from 'containers/blog';
 import SingleBlog from 'containers/blog/single';
 import Contact from 'components/contact';
+import StaticPage from 'containers/static-page';
 
 class Routes extends Component {
   static propTypes = {
@@ -37,6 +38,7 @@ class Routes extends Component {
 
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/:static" component={StaticPage} />
           <Route exact path="/pacotes" component={Packages} />
           <Route path="/pacotes/:id" component={SinglePackages} />
           <Route exact path="/blog" component={Blog} />

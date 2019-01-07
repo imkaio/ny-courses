@@ -17,7 +17,7 @@ const Footer = ({ items }) => (
 
                 {item.children.map(child => (
                   <li key={child.language}>
-                    <Link className="footer__item-child" to={child.path}>{content[child.language]}</Link>
+                    <Link className="footer__item-child" to={`${item.path}${child.path}`}>{content[child.language]}</Link>
                   </li>
                 ))}
               </ul>

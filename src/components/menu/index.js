@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Isvg from 'react-inlinesvg';
 import { Link } from 'react-router-dom';
 import { Consumer } from 'app/client/context';
 import Modal from 'containers/modal';
@@ -52,7 +51,6 @@ class Menu extends Component {
               </ul>
 
               <button onClick={createModal} className="menu__modal-button">{content.MENU_ORCAMENTO}</button>
-              <Isvg className="menu__search" src="/images/icon-search.svg" />
 
               <Modal />
             </nav>

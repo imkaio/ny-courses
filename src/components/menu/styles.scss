@@ -13,7 +13,7 @@
   justify-content: center;
   background-color: $color-orange;
   transition: opacity $timer3;
-
+  
   @include media('>=md') {
     opacity: 1;
     width: auto;
@@ -23,8 +23,8 @@
     position: unset;
     flex-direction: row;
     pointer-events: all;
-    justify-content: unset;
-    background-color: none;
+    justify-content: flex-end;
+    background-color: transparent;
   }
 }
 

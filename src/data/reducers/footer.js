@@ -2,7 +2,7 @@ const initialState = {
   items: [
     {
       language: 'RODAPE_CONHECA',
-      path: '/sobre',
+      path: '/conheca',
       children: [
         { language: 'RODAPE_QUEM_SOMOS', path: '#quem-somos' },
         { language: 'RODAPE_COMO_FUNCIONA', path: '#como-funciona' }

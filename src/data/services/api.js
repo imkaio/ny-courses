@@ -115,6 +115,24 @@ export default {
         related: data.fields.Relacionados
       }));
   },
+  getStatic: (staticId) => {
+    const table = '/PaginasDinamicas';
+    const query = stringify({
+      filterByFormula: `ID="${staticId}"`
+    });
+
+    return fetch(`${table}?${query}`)
+      .then(({ data }) => {
+        const record = data.records && data.records[0];
+        return record ? ({
+          id: record.id,
+          staticId: record.fields.ID,
+          url: record.fields.URL,
+          content: record.fields.Texto,
+          title: record.fields.Titulo
+        }) : Promise.reject('No record found');
+      });
+  },
   postModal: (data) => {
     const body = new FormData();
     Object.entries(data).forEach(([key, value]) => body.append(key, value));

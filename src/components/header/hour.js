@@ -16,20 +16,21 @@ class HeaderHour extends Component {
 
   generateDate = () => {
     const date = new Date();
-    const nyDate = date.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour12: false });
-    const [minutes, seconds, ms] = nyDate.split(':');
+    const nyDate = date.toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
+    const [minutes, seconds, tail] = nyDate.split(':');
+    const [ms, time] = tail.split(' ');
     const renewNyTime = (60 - ms) * 100;
 
     this.timeout = setTimeout(this.generateDate, renewNyTime);
 
-    this.setState(() => ({ date: `${minutes}:${seconds}` }));
+    this.setState(() => ({ date: `${minutes}:${seconds} ${time}` }));
   }
 
   render() {
     return (
       <Consumer>
         {content => (
-          <span className="header__hour">{content.HORARIO_NY}: {this.state.date}h</span>
+          <span className="header__hour">{content.HORARIO_NY}: {this.state.date}</span>
         )}
       </Consumer>
     );

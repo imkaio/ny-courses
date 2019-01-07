@@ -1,0 +1,58 @@
+.static-page__title {
+  font-size: 36px;
+  margin-top: 45px;
+  margin-bottom: 38px;
+}
+
+.static-page__heading {
+  font-size: 26px;
+  margin-top: 64px;
+  margin-bottom: 25px;
+  color: $color-orange;
+  font-family: $secondary-font;
+}
+
+.static-page__paragraph {
+  font-size: 18px;
+  line-height: 1.3em;
+  font-family: $secondary-font;
+
+  .static-page__blockquote & {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 22px;
+    padding-right: 210px;
+  }
+}
+
+.static-page__link {
+  font-weight: 600;
+  color: $color-orange;
+  text-decoration: underline;
+
+  .static-page__heading & {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.static-page__list {
+  margin: 36px 0 66px;
+}
+
+.static-page__item {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  margin-bottom: 29px;
+
+  &:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    margin-right: 21px;
+    background-color: $color-grey_23;
+  }
+}
