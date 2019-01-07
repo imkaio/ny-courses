@@ -31,7 +31,6 @@ const Footer = ({ items }) => (
                 height="214"
                 scrolling="no"
                 frameBorder="0"
-                allowTransparency="true"
                 allow="encrypted-media"
               />
             </div>

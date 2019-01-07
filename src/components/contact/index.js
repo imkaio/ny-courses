@@ -17,19 +17,37 @@ const Contact = () => (
               <h2 className="contact__social-title">{content.REDES_SOCIAIS}</h2>
               <ul>
                 <li>
-                  <a className="contact__social-item" href={content.INSTAGRAM_URL} alt={content.INSTAGRAM}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact__social-item"
+                    alt={content.INSTAGRAM}
+                    href={content.INSTAGRAM_URL}
+                  >
                     <Isvg className="contact__social-icon" src="/images/icon-instagram.svg" />
                     <span className="contact__social-label">{content.INSTAGRAM}</span>
                   </a>
                 </li>
                 <li>
-                  <a className="contact__social-item" href={content.FACEBOOK_URL} alt={content.FACEBOOK}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact__social-item"
+                    alt={content.FACEBOOK}
+                    href={content.FACEBOOK_URL}
+                  >
                     <Isvg className="contact__social-icon" src="/images/icon-facebook.svg" />
                     <span className="contact__social-label">{content.FACEBOOK}</span>
                   </a>
                 </li>
                 <li>
-                  <a className="contact__social-item" href={`https://api.whatsapp.com/send?phone=${content.WHATSAPP_NUMERO}`} alt={content.WHATSAPP}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact__social-item"
+                    alt={content.WHATSAPP}
+                    href={`https://api.whatsapp.com/send?phone=${content.WHATSAPP_NUMERO}`}
+                  >
                     <Isvg className="contact__social-icon" src="/images/icon-whatsapp.svg" />
                     <span className="contact__social-label">{content.WHATSAPP}</span>
                   </a>
