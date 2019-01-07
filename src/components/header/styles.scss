@@ -94,6 +94,7 @@
   font-size: 16px;
   white-space: pre-line;
   text-transform: uppercase;
+  color: inherit;
 
   @include media('>=md') {
     font-size: 14px;

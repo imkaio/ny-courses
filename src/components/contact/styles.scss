@@ -23,6 +23,13 @@
 .contact__social-item {
   display: flex;
   margin-bottom: 21px;
+  transition: $timer3;
+  transition-property: color, fill;
+
+  &:hover {
+    color: $color-orange;
+    fill: $color-orange;
+  }
 }
 
 .contact__social-icon {
