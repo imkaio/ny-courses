@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from 'containers/menu';
 import Isvg from 'react-inlinesvg';
-import Language from 'components/language';
+import Language from 'containers/language';
 import HeaderHour from 'components/header/hour';
 import { Link } from 'react-router-dom';
 import { Consumer } from 'app/client/context';

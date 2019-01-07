@@ -22,7 +22,7 @@ const errorContent = (error = {}) => ({
 export default language => (dispatch) => {
   dispatch(loadingContent(language));
 
-  return ApiClient.getContent()
+  return ApiClient.getContent(language)
     .then(response => dispatch(successContent(response)))
     .catch(error => dispatch(errorContent(error)));
 };

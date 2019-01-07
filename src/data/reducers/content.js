@@ -15,6 +15,7 @@ export default (state = initialState, action = {}) => {
     case LOADING_CONTENT:
       return {
         ...state,
+        default: action.default,
         loading: true,
         loaded: false
       };
