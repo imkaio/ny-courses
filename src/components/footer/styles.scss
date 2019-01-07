@@ -17,6 +17,10 @@
     margin-top: 0;
     font-size: 18px;
   }
+
+  &.footer__item--social:after {
+    display: none;
+  }
 }
 
 .footer__item-child {

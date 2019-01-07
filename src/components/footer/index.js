@@ -22,6 +22,19 @@ const Footer = ({ items }) => (
                 ))}
               </ul>
             ))}
+
+            <div className="col-xs-12 col-md-4 col-md-offset-1">
+              <span className="footer__item footer__item--social">{content.SIGA_FACEBOOK}</span>
+              <iframe
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMNY.Intercambio%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                width="340"
+                height="214"
+                scrolling="no"
+                frameBorder="0"
+                allowTransparency="true"
+                allow="encrypted-media"
+              />
+            </div>
           </div>
         </div>
       </footer>
