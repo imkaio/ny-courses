@@ -15,7 +15,18 @@ class Menu extends Component {
     isOpen: false
   }
 
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
   handleScroll = () => {
+    const width = window.innerWidth;
+    if (width >= 1024) return null;
+
     const { isOpen } = this.state;
     const html = document.querySelector('html');
 
@@ -23,6 +34,19 @@ class Menu extends Component {
       html.style.overflowY = 'hidden';
     } else {
       html.style.overflowY = '';
+    }
+  }
+
+  handleResize = () => {
+    const html = document.querySelector('html');
+    const width = window.innerWidth;
+
+    if (width >= 1024) {
+      html.style.overflowY = '';
+    }
+
+    if (width < 1024 && this.state.isOpen) {
+      html.style.overflowY = 'hidden';
     }
   }
 
