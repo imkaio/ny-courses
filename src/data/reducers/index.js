@@ -9,6 +9,7 @@ import footer from './footer';
 import modal from './modal';
 import contact from './contact';
 import staticPage from './static-page';
+import testimony from './testimony';
 
 export default combineReducers({
   content,
@@ -19,5 +20,6 @@ export default combineReducers({
   footer,
   modal,
   contact,
-  staticPage
+  staticPage,
+  testimony
 });

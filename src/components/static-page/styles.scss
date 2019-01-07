@@ -21,7 +21,10 @@
     font-size: 22px;
     font-weight: 600;
     margin-top: 22px;
-    padding-right: 210px;
+
+    @include media('>=md') {
+      padding-right: 210px;
+    }
   }
 }
 

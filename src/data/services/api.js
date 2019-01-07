@@ -133,6 +133,22 @@ export default {
         }) : Promise.reject('No record found');
       });
   },
+  getTestimony: () => {
+    const table = '/Depoimentos';
+    const query = stringify({
+      'sort[0][field]': 'Ordem',
+      'sort[0][direction]': 'asc',
+      filterByFormula: 'Ativo',
+      fields: ['ID', 'Nome', 'Texto']
+    });
+
+    return fetch(`${table}?${query}`)
+      .then(({ data }) => data.records.map(record => ({
+        id: record.id,
+        name: record.fields.Nome,
+        text: record.fields.Texto
+      })));
+  },
   postModal: (data) => {
     const body = new FormData();
     Object.entries(data).forEach(([key, value]) => body.append(key, value));

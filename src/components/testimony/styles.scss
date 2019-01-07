@@ -1,0 +1,57 @@
+.testimony {
+  padding: 55px 0;
+  margin-top: 75px;
+  background-color: $color-grey_E5;
+
+  @include media('>=md') {
+    padding: 80px 0;
+  }
+}
+
+.testimony__title {
+  font-size: 28px;
+  line-height: 1.3em;
+}
+
+.testimony__item {
+  display: none;
+  margin-top: 30px;
+}
+
+.testimony__item--active {
+  display: block;
+}
+
+.testimony__item-paragraph {
+  font-size: 18px;
+  line-height: 1.2em;
+  font-family: $secondary-font;
+}
+
+.testimony__item-title {
+  margin-top: 20px;
+  color: $color-orange;
+
+  @include media('>=md') {
+    font-size: 22px;
+  }
+}
+
+.testimony__arrow {
+  cursor: pointer;
+  width: 45px;
+  fill: $color-orange;
+  transition: fill $timer3;
+
+  &:hover {
+    fill: $color-orange_dark;
+  }
+
+  &:first-child {
+    margin-top: 20px;
+  }
+}
+
+.testimony__arrow--left {
+  transform: rotate(180deg);
+}
