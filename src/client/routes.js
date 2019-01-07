@@ -38,12 +38,12 @@ class Routes extends Component {
 
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/:static" component={StaticPage} />
           <Route exact path="/pacotes" component={Packages} />
           <Route path="/pacotes/:id" component={SinglePackages} />
           <Route exact path="/blog" component={Blog} />
           <Route path="/blog/:id" component={SingleBlog} />
           <Route path="/contato" component={Contact} />
+          <Route path="/:static" component={StaticPage} />
         </Switch>
 
         <Footer />

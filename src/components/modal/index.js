@@ -80,6 +80,8 @@ class Modal extends Component {
       <Consumer>
         {content => (
           <div className={`modal ${!this.props.isOpen ? 'modal--hide' : ''}`} onClick={this.handleClose()}>
+            <div className="modal__close" onClick={this.handleClose(true)} />
+
             {!this.props.success ? (
               <form className="modal__form" onSubmit={this.submitModal}>
                 {this.fields.map(field => (

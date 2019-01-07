@@ -51,9 +51,9 @@ class Menu extends Component {
               </ul>
 
               <button onClick={createModal} className="menu__modal-button">{content.MENU_ORCAMENTO}</button>
-
-              <Modal />
             </nav>
+
+            <Modal />
           </Fragment>
         )}
       </Consumer>
