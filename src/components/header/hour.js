@@ -30,7 +30,7 @@ class HeaderHour extends Component {
     return (
       <Consumer>
         {content => (
-          <span className="header__hour">{content.HORARIO_NY}: {this.state.date}</span>
+          <span className="header__hour">{this.state.date}: {content.HORARIO_NY}</span>
         )}
       </Consumer>
     );

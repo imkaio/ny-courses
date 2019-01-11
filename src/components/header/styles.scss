@@ -1,4 +1,4 @@
-.header {
+  .header {
   top: 0;
   left: 0;
   z-index: 5;
@@ -22,7 +22,7 @@
 .header__info-bar--left {
   display: flex;
   justify-content: center;
-  
+
   @include media('>=md') {
     flex-wrap: unset;
     justify-content: unset;
